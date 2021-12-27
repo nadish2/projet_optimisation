@@ -148,7 +148,7 @@ def ope_elem(tab,nbrow,nbcol,nbvar,nbcontr):
             for i in range (nbcol-2):
                 print(str(round(tab[j][i],2)),end="  ")
             print("\n")
-        if count>=nbcontr:
+        if count>nbcontr:
             print("\n Ce système n'a pas de solution ou des solutions infinie.")
             return tab
     print("\n Nous avons la solution finale suivante: \n Z=", tab[0][nbcol-3])
@@ -191,13 +191,13 @@ def ope_bigm(tab,nbvar,nbcontr):
 #Simplex et BigM pour plusieurs variables 
 
 # Pour tester variable en input--> Décommenter les deux lignes en-dessous 
-nbvar=int(input("Veuillez saisir le nombre de variables de décision souhaités: "))
-nbcontr=int(input("Veuillez saisir le nombre de contraintes souhaités: "))
+# nbvar=int(input("Veuillez saisir le nombre de variables de décision souhaités: "))
+# nbcontr=int(input("Veuillez saisir le nombre de contraintes souhaités: "))
 
 #Exemple: 3 variable/3 contraintes 
 # Pour tester variable en input--> Commenter les 2 lignes en dessous
-# nbvar=2
-# nbcontr=3
+nbvar=2
+nbcontr=3
 
 #nombre de colonnes= colonne z + nombre de variables de decision + nombre de contraintes + variable artificielles + après égalité + opérateur + booleen ligne pivot ou non
 nbcol= 1 + nbvar + (nbcontr*2) + 1 + 1 + 1
@@ -209,33 +209,33 @@ nbrow= nbcontr + 1
 tab= np.zeros((nbrow,nbcol))
 
 #Pour récupérer les coefficients  par input --> decommenter la ligne en dessous
-tab=inputSysteme(tab, nbcol, nbvar, nbcontr)
+# tab=inputSysteme(tab, nbcol, nbvar, nbcontr)
 
 #Exemple de valeurs pour 2 variables et 3 contraintes
 #Pour tester avec input, commentez le paragraphe en-dessous
-# #Z
-# tab[0][0]=1
-# tab[0][1]=-3
-# tab[0][2]=-5
-# tab[0][nbcol-3]=0
+#Z
+tab[0][0]=1
+tab[0][1]=-3
+tab[0][2]=-5
+tab[0][nbcol-3]=0
 
-# #Contrainte n°1
-# tab[1][1]=1
-# tab[1][2]=1
-# tab[1][nbcol-3]=2
-# tab[1][nbcol-1]=2
+#Contrainte n°1
+tab[1][1]=1
+tab[1][2]=1
+tab[1][nbcol-3]=2
+tab[1][nbcol-1]=2
 
-# #Contrainte n°2
-# tab[2][1]=0
-# tab[2][2]=1
-# tab[2][nbcol-3]=6
-# tab[2][nbcol-1]=1
+#Contrainte n°2
+tab[2][1]=0
+tab[2][2]=1
+tab[2][nbcol-3]=6
+tab[2][nbcol-1]=1
 
-# #Contrainte n°3
-# tab[3][1]=3
-# tab[3][2]=2
-# tab[3][nbcol-3]=18
-# tab[3][nbcol-1]=3
+#Contrainte n°3
+tab[3][1]=3
+tab[3][2]=2
+tab[3][nbcol-3]=18
+tab[3][nbcol-1]=3
 
 #On initialise le système
 tab=initialiseSysteme(tab, nbcontr, nbvar, nbrow, nbcol)
