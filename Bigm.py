@@ -256,12 +256,13 @@ class Systeme:
     def ope_bigm(self):
         
         j=1
+        count=1
         while j<=3:
             if self.ligne[j][7]!=0 or self.ligne[j][8]!=0 or self.ligne[j][9]!=0:
                 newz= self.ope_unit_bigm(j)
                 self.actualiseSys(newz, self.a.col, self.b.col, self.c.col)
                 print("\n------------------------------------------------------------------------------------")
-                print("\n Big M: Transformaion n°"+ str(j) + " de Z: ")
+                print("\n Big M: Transformaion n°"+ str(count) + " de Z: ")
                 affCan = sys.affichageCanonique()
                 print(affCan)
             j= j+1
