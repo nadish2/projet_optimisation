@@ -1,5 +1,6 @@
 # projet_optimisation
 
 Dans ce projet, nous pouvons trouver:
-- 2 fichiers Simplex et BigM qui fonctionne pour des exemples de 3 variables décisionnelles et 3 contraintes. Ces deux fichiers ont un système d'affichage de chaque étape plus agréable et plus détaillée.
-- 2 fichiers SimplexGeneral et BigMGeneral qui fonctionne pour n variables et n contraintes
+- 1 fichier BigM qui fonctionne pour des exemples de 3 variables décisionnelles et 3 contraintes. Ce fichier a un système d'affichage de chaque étape plus agréable et plus détaillée.
+- 1 fichier BigMGeneral qui fonctionne pour n variables et n contraintes avec un affichage moins détaillée sous forme de tableau
+- 3 fichiers tests du Controle Continu: Question1.py, Question2.py, Question3.py
